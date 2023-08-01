@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
-// ewentualnie 
-//#include<iostream>
-//#include<algorhitm>
+
 using namespace std;
 int main(){
 	ios_base::sync_with_stdio(false);
