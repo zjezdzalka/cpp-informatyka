@@ -8,8 +8,13 @@ int main(){
 	string s;
 	cin>>d>>p;
 	while(d>0){
-		s = char(48+d%p)+s;
-		// s = char('0'+d%p)+s;
+		i = d%p;
+		if(i<10){
+			s=char('0'+i)+s;
+		}
+		else{
+			s=char('A'-10+i)+s;
+		}
 		d /= p;
 	}
 	cout<<"System"<<p<<"\n"<<s<<"\n";
