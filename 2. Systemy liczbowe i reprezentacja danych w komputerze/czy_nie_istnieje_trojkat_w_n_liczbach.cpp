@@ -5,46 +5,14 @@ int main(){
 	cin.tie(NULL);
 	cout.tie(NULL);
 	string test;
-	int n,pierwsza_minimalna=0,druga_minimalna=0,maksymalna_wartosc=0,liczba;
+	int n,i;
 	cin>>n;
-	while(n>0){
-		cin >> liczba;
-		if(pierwsza_minimalna == 0){
-			pierwsza_minimalna == liczba;
-		}
-		
-		if(pierwsza_minimalna >= liczba && druga_minimalna == 0){
-			druga_minimalna = pierwsza_minimalna;
-			pierwsza_minimalna = liczba;
-		}
-		else if(pierwsza_minimalna >= liczba && druga_minimalna != 0){
-			pierwsza
-		}
-		else{
-			druga_minimalna = liczba;
-		}
-		
-		if(druga_minimalna>=liczba && maksymalna_wartosc == 0){
-			maksymalna_wartosc = druga_minimalna;
-			druga_minimalna = liczba;
-		}
-		else{
-			maksymalna_wartosc = liczba;
-		}
-		
-		if(pierwsza_minimalna > druga_minimalna){
-			swap(pierwsza_minimalna, druga_minimalna);
-		}
-		if(druga_minimalna > maksymalna_wartosc){
-			swap(maksymalna_wartosc, druga_minimalna);
-		}
-		if(liczba > maksymalna_wartosc){
-			maksymalna_wartosc = liczba;
-		}
-		
-		n--;
+	int liczby[n];
+	for(i=0;i<n;++i){
+		cin>>liczby[i];
 	}
-	if((pierwsza_minimalna + druga_minimalna) <= maksymalna_wartosc)
+	sort(liczby,liczby+n);
+	if((liczby[0] + liczby[1]) <= liczby[n-1])
 		cout<<"TAK\n";
 	else
 		cout<<"NIE\n";
